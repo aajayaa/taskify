@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import Toast from "../components/Toast";
 import "./Dashboard.css";
 import Navbar from "../components/Navbar";
-import Sidebar from "../components/sidebar";
+import Sidebar from "../components/Sidebar";
 import TaskItem from "../components/TaskItem";
 
 const Dashboard = () => {
