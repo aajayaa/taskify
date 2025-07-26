@@ -1,0 +1,80 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Align Sidebar + Main Content side-by-side */
+.dashboard-content {
+  display: flex;
+  flex: 1;
+}
+
+/* Main area next to sidebar */
+.main-area {
+  flex: 1;
+  padding: 30px;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Task Form */
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.task-form button {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.task-form button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Filter Controls */
+.filter-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-controls button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-controls button:hover {
+  background-color: #e0e7ff;
+  border-color: #a5b4fc;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

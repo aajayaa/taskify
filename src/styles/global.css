@@ -1,0 +1,21 @@
+/* styles.css or global.css */
+
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+  --primary-color: #4a90e2;
+  /* add more colors as needed */
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --primary-color: #bb86fc;
+  /* dark theme colors */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

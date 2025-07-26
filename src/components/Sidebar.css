@@ -1,0 +1,37 @@
+.sidebar {
+  width: 260px;
+  background-color: #f4f6fb;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+  min-height: calc(100vh - 60px); /* minus navbar height if fixed */
+  font-family: 'Inter', sans-serif;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  color: #1f3b73;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.sidebar hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.sidebar strong {
+  display: inline-block;
+  width: 110px;
+  color: #444;
+}
+
+.sidebar p:last-child {
+  margin-bottom: 0;
+}
