@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from '../api/axios.js'
+import axiosInstance from '../api/axios.js'
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
@@ -14,7 +14,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/register', form);
+      const res = await axiosInstance.post('/api/register', form);
       localStorage.setItem('token', res.data.token);
       navigate('/');
     } catch (err) {

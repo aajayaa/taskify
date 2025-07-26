@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "../api/axios.js";
+import axiosInstance from "../api/axios.js";
 import { jwtDecode } from "jwt-decode";
 import Toast from "../components/Toast";
 import "./Dashboard.css";
@@ -28,7 +28,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("/api/tasks", {
+      const res = await axiosInstance.get("/api/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -46,7 +46,7 @@ const Dashboard = () => {
     e.preventDefault();
     if (!title.trim()) return;
     try {
-      const res = await axios.post(
+      const res = await axiosInstance.post(
         "/api/tasks",
         { title },
         { headers: { Authorization: `Bearer ${token}` } }
@@ -61,7 +61,7 @@ const Dashboard = () => {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`api/tasks/${id}`, {
+      await axiosInstance.delete(`api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(tasks.filter((task) => task._id !== id));
@@ -73,7 +73,7 @@ const Dashboard = () => {
 
   const updateTask = async (id) => {
     try {
-      const res = await axios.put(
+      const res = await axiosInstance.put(
         `/api/tasks/${id}`,
         { title: editTitle },
         { headers: { Authorization: `Bearer ${token}` } }
@@ -89,7 +89,7 @@ const Dashboard = () => {
 
   const toggleComplete = async (task) => {
   try {
-    const res = await axios.put(
+    const res = await axiosInstance.put(
       `/api/tasks/${task._id}`,
       { title: task.title, completed: !task.completed },
       { headers: { Authorization: `Bearer ${token}` } }
