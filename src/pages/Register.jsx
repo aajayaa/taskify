@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import axiosInstance from '../api/axios.js'
+// import axiosInstance from '../api/axios.js'
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
@@ -14,7 +15,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axiosInstance.post('/api/register', form);
+      const res = await axios.post('https://taskify-api-yi4i.onrender.com/api/register', form);
       localStorage.setItem('token', res.data.token);
       navigate('/');
     } catch (err) {
