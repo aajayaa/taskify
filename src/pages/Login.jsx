@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios.js'
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
@@ -14,7 +14,7 @@ const Login = ({ onLogin }) => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/login', form);
+      const res = await axios.post('/api/login', form);
       localStorage.setItem('token', res.data.token);
       onLogin(); // <== trigger App to refresh token state
     } catch (err) {
